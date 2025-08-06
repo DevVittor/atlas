@@ -4,9 +4,9 @@ export default function DetailsProduct() {
   return (
     <main className="flex justify-center items-center gap-5 flex-grow">
       <section className="flex-grow flex justify-center">
-        <div className="flex justify-center gap-5 flex-grow max-w-7xl">
-          <div className="flex items-center flex-col gap-3 px-3 py-10">
-            <div className="h-[450px] bg-zinc-200 w-[450px] flex justify-center items-center">
+        <div className="flex justify-center flex-wrap gap-5 flex-grow max-w-7xl">
+          <div className="flex items-center flex-col gap-3 md:px-3 md:py-10 p-3">
+            <div className="md:h-[450px] bg-zinc-200 md:w-[450px] flex justify-center items-center">
               <img
                 className=""
                 src="https://images.pexels.com/photos/33292126/pexels-photo-33292126.jpeg"
@@ -32,7 +32,7 @@ export default function DetailsProduct() {
               </p>
             </div>
           </div>
-          <div className="border-l border-zinc-200 flex flex-col gap-3 flex-grow min-h-screen px-3 py-10">
+          <div className="border-l border-zinc-200 flex flex-col flex-wrap gap-3 flex-grow min-h-screen md:px-3 md:py-10 px-3 pb-3">
             <div className="flex justify-between flex-col flex-wrap">
               <h2 className="">
                 <b className="text-2xl">Fornecedores:</b> 20 resultados

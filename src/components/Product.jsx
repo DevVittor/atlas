@@ -8,7 +8,7 @@ export default function Product() {
   const width = Math.floor(Math.random() * 200) + 300;
   const height = Math.floor(Math.random() * 200) + 300;
   const randomSeed = Math.floor(Math.random() * 1000);
-  const imageUrl = `https://picsum.photos/seed/${randomSeed}/${width}/${height}`;
+  const imageUrl = `https://picsum.photos/seed/${randomSeed}/${350}/${350}`;
 
   return (
     <div className="bg-white rounded-2xl hover:shadow-md transition-shadow ease-in-out duration-300 hover:cursor-pointer overflow-hidden w-full  mx-auto mb-2 p-3 border border-zinc-200">
@@ -17,7 +17,7 @@ export default function Product() {
         <img
           src={imageUrl}
           alt="Produto aleatório"
-          className="w-full rounded-lg object-contain bg-white border"
+          className="w-full rounded-lg object-cover aspect-square bg-white border"
         />
         <div className="absolute top-0 right-0 h-8 w-8 rounded-full flex justify-center items-center m-2 bg-white/20 hover:bg-white/70 transition-colors ease-in-out duration-300 backdrop-blur-lg p-1">
           <GoPlus className="text-2xl" />
