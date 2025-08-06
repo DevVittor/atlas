@@ -39,7 +39,7 @@ export default function DetailsProduct() {
           <div className="border-l border-zinc-200 flex flex-col flex-wrap gap-3 flex-grow md:px-3 md:py-10 px-3 pb-3">
             {openModal && (
               <div className="fixed inset-0 flex justify-center backdrop-blur-lg bg-white/30 items-end py-3 z-10 overflow-auto">
-                <div className="flex flex-col gap-2 overflow-auto w-full mt-4 p-2 bg-white h-[450px]">
+                <div className="flex flex-col gap-2 overflow-auto w-full mt-4 p-2 bg-white h-[350px]">
                   {Array.from({ length: 20 }).map((_, index) => (
                     <CardSupplier key={index} />
                   ))}
