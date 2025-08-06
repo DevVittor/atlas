@@ -4,8 +4,8 @@ import { RiFireFill } from "react-icons/ri";
 
 export default function CardSupplier() {
   return (
-    <div className="flex justify-between items-start gap-2 rounded-lg hover:cursor-pointer hover:shadow-sm transition-shadow ease-in-out duration-300 border border-zinc-200 bg-white p-4 max-h-[150px]">
-      <div className="flex items-start gap-3">
+    <div className="flex justify-between items-start gap-2 rounded-lg hover:cursor-pointer hover:shadow-sm transition-shadow ease-in-out duration-300 border border-zinc-200 bg-white p-4 md:max-h-[150px]">
+      <div className="flex items-start gap-3 overflow-auto">
         <div className="flex justify-center items-center flex-col gap-1.5">
           <div className="rounded-md h-[50px] w-[50px] border border-green-500 bg-green-300 flex justify-center items-center">
             <h2 className="text-green-700 font-bold">MD</h2>

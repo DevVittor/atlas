@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-10 border-b-2 border-obsidian-green/95">
-      <div className="flex justify-center items-center md:gap-3 gap-0  flex-col w-full md:py-10 md:px-5 py-2 px-3 bg-obsidian-green">
+    <header className="sticky top-0 z-20 border-b-2 border-obsidian-green/95">
+      <div className="flex justify-center items-center md:gap-3 gap-0 flex-col w-full md:py-10 md:px-5 py-2 px-3 bg-obsidian-green">
         <Link to="/">
           <h1 className="text-zinc-100 text-7xl font-bold ">
             K<span className="text-yellow-400">az</span>oo

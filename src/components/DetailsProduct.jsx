@@ -1,6 +1,10 @@
+import { useState } from "react";
 import CardSupplier from "./CardSupplier";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function DetailsProduct() {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <main className="flex justify-center items-center gap-5 flex-grow">
       <section className="flex-grow flex justify-center">
@@ -66,10 +70,23 @@ export default function DetailsProduct() {
                 </select>
               </div>
             </div>
-            <div className="flex flex-col gap-2">
-              {Array.from({ length: 20 }).map((_, index) => (
-                <CardSupplier key={index} />
-              ))}
+            <div className="fixed inset-0 flex justify-center backdrop-blur-lg bg-white/30 items-end py-3 z-10 overflow-auto">
+              {!openModal && (
+                <div
+                  className="bg-blue-500 text-zinc-100 h-[40px] flex-grow rounded-xl p-2 text-center flex justify-center items-center gap-2 shadow-sm mb-8"
+                  onClick={() => setOpenModal(!openModal)}
+                >
+                  <span className="font-semibold">Fornecedores</span>
+                  <IoIosArrowDown />
+                </div>
+              )}
+              {openModal && (
+                <div className="flex flex-col gap-2 overflow-auto w-full mt-4 p-2 bg-white h-[400px]">
+                  {Array.from({ length: 20 }).map((_, index) => (
+                    <CardSupplier key={index} />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
