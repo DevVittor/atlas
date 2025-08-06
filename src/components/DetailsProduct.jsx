@@ -36,58 +36,25 @@ export default function DetailsProduct() {
               </p>
             </div>
           </div>
-          <div className="border-l border-zinc-200 flex flex-col flex-wrap gap-3 flex-grow min-h-screen md:px-3 md:py-10 px-3 pb-3">
-            <div className="flex justify-between flex-col flex-wrap">
-              <h2 className="">
-                <b className="text-2xl">Fornecedores:</b> 20 resultados
-              </h2>
-              <h2>R$ 245,90 - R$ 384,90</h2>
-            </div>
-            <div className="flex justify-between items-center gap-2 flex-wrap">
-              <div className="">
-                <input
-                  className="px-3 py-1 rounded-md font-medium bg-[#f9f9f9] border border-zinc-200 outline-none"
-                  type="search"
-                  name=""
-                  id=""
-                  placeholder="Buscar por fornecedores"
-                />
-              </div>
-              <div className="">
-                <select
-                  className="px-3 py-1 rounded-md outline-none bg-[#f9f9f9] border border-zinc-200 font-medium text-zinc-500 hover:cursor-pointer"
-                  name=""
-                  id=""
-                >
-                  <option value="">Destacados</option>
-                  <option value="">Verificados</option>
-                  <option value="">Novidades</option>
-                  <option value="">Populares</option>
-                  <option value="">Menor Preço</option>
-                  <option value="">Maior Preço</option>
-                  <option value="">Mais Próximo</option>
-                  <option value="">Melhor Avaliado</option>
-                </select>
-              </div>
-            </div>
-            <div className="fixed inset-0 flex justify-center backdrop-blur-lg bg-white/30 items-end py-3 z-10 overflow-auto">
-              {!openModal && (
-                <div
-                  className="bg-blue-500 text-zinc-100 h-[40px] flex-grow rounded-xl p-2 text-center flex justify-center items-center gap-2 shadow-sm mb-8"
-                  onClick={() => setOpenModal(!openModal)}
-                >
-                  <span className="font-semibold">Fornecedores</span>
-                  <IoIosArrowDown />
-                </div>
-              )}
-              {openModal && (
-                <div className="flex flex-col gap-2 overflow-auto w-full mt-4 p-2 bg-white h-[400px]">
+          <div className="border-l border-zinc-200 flex flex-col flex-wrap gap-3 flex-grow md:px-3 md:py-10 px-3 pb-3">
+            {openModal && (
+              <div className="fixed inset-0 flex justify-center backdrop-blur-lg bg-white/30 items-end py-3 z-10 overflow-auto">
+                <div className="flex flex-col gap-2 overflow-auto w-full mt-4 p-2 bg-white h-[450px]">
                   {Array.from({ length: 20 }).map((_, index) => (
                     <CardSupplier key={index} />
                   ))}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
+            {!openModal && (
+              <div
+                className="bg-blue-500 text-zinc-100 h-[40px] right-0 left-0 mx-3 rounded-xl p-2 text-center flex justify-center items-center gap-2 shadow-sm fixed bottom-5"
+                onClick={() => setOpenModal(!openModal)}
+              >
+                <span className="font-semibold">Fornecedores</span>
+                <IoIosArrowDown />
+              </div>
+            )}
           </div>
         </div>
       </section>
