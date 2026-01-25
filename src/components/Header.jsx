@@ -1,29 +1,68 @@
 import { Link } from "react-router-dom";
+import { Menu } from "lucide-react";
+import { useState } from "react";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-20 border-b-2 border-obsidian-green/95">
-      <div className="flex justify-center items-center md:gap-3 gap-0 flex-col w-full md:py-10 md:px-5 py-2 px-3 bg-obsidian-green">
-        <Link to="/">
-          <h1 className="text-zinc-100 text-7xl font-bold ">
+    <header className="sticky top-0 z-20 border-b border-obsidian-green/90 bg-obsidian-green">
+      {/* Barra principal */}
+      <div className="flex items-center justify-between px-4 py-3">
+        {/* Botão de menu no mobile */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="text-zinc-100 md:hidden"
+        >
+          <Menu size={28} />
+        </button>
+
+        {/* Logo centralizada */}
+        <Link to="/" className="flex-1 text-center">
+          <h1 className="text-zinc-100 text-2xl font-bold">
             K<span className="text-yellow-400">az</span>oo
           </h1>
         </Link>
-        <ol className="flex items-center justify-center flex-wrap gap-2 text-zinc-100 font-medium">
-          <li>
-            <Link to="/">Início</Link>
-          </li>
-          <li>
-            <Link to="/categorias">Categorias</Link>
-          </li>
-          <li>
-            <Link to="/produtos">Produtos</Link>
-          </li>
-          <li>
-            <Link to="/fornecedores">Fornecedores</Link>
-          </li>
-        </ol>
+
+        {/* Espaço para ícones do lado direito (carrinho, perfil, etc.) */}
+        <div className="w-[28px]"></div>
       </div>
+
+      {/* Menu mobile */}
+      {open && (
+        <nav className="md:hidden bg-obsidian-green border-t border-obsidian-green/70">
+          <ol className="flex flex-col p-3 text-zinc-100 gap-3 text-lg font-medium">
+            <li>
+              <Link to="/" onClick={() => setOpen(false)}>
+                Início
+              </Link>
+            </li>
+            <li>
+              <Link to="/categorias" onClick={() => setOpen(false)}>
+                Categorias
+              </Link>
+            </li>
+            <li>
+              <Link to="/produtos" onClick={() => setOpen(false)}>
+                Produtos
+              </Link>
+            </li>
+            <li>
+              <Link to="/fornecedores" onClick={() => setOpen(false)}>
+                Fornecedores
+              </Link>
+            </li>
+          </ol>
+        </nav>
+      )}
+
+      {/* Menu desktop */}
+      <nav className="hidden md:flex justify-center gap-6 py-3 bg-obsidian-green text-zinc-100 font-medium">
+        <Link to="/">Início</Link>
+        <Link to="/categorias">Categorias</Link>
+        <Link to="/produtos">Produtos</Link>
+        <Link to="/fornecedores">Fornecedores</Link>
+      </nav>
     </header>
   );
 }
